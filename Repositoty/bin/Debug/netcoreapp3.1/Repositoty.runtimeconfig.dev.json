@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\trinhnn.AUTOADS\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\trinhnn.AUTOADS\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+    ]
+  }
+}

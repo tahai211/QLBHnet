@@ -1,0 +1,57 @@
+﻿@model Quanly.Models.DTO.Login
+@{
+    ViewBag.Title = "Login";<!--chuyen du lieu tam thoi k co modul tu controller sang view-->
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Spin Login Form </h1>
+<div class="clear-loading spinner">
+
+    <span></span>
+</div>
+<div class="w3ls-login box box--big">
+    <!-- form starts here --> I
+
+    <form action="/Login/Verify" method="post">
+        <div class="agile-field-txt">
+            <label><i class="fa fa-user" aria-hidden="true"></i> Username </label>
+            <input type="text" name="UserName" placeholder="Enter User Name" required="" />
+        </div>
+        <div class="agile-field-txt">
+            <label><i class="fa fa-unlock-alt" aria-hidden="true"></i> password </label>
+            <input type="password" name="Password" placeholder="Enter Password" required="" id="myInput" />
+            <div class="agile_label">
+                <input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
+                <label class="check" for="check3">Show password</label>
+            </div>
+            <div class="agile-right">
+                <a href="#">forgot password?</a>
+            </div>
+
+        </div>
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myInput");
+                if (x.type === "Password") {
+                    x.type = "text";
+                }
+                else {
+                    x.type = "Password";
+                }
+        </script>
+
+        <!-- //end script -->
+
+        <input type="submit" value="LOGIN">
+        <div class="agile-right">
+            <a href="/Login/Register">Create Account</a>
+        </div>
+        @if (ViewBag.thongbao != null)
+        {
+            <p style="color:red">@ViewBag.thongbao</p>
+        }
+
+    </form>
+
+</div>

@@ -1,0 +1,47 @@
+﻿<Properties StartupConfiguration="{A5766B8F-3DAE-4567-9011-833107C7FF42}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.ItemProperties.Quanly PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Quanly/Program.cs">
+    <Files>
+      <File FileName="Quanly/Controllers/HomeController.cs" Line="22" Column="33" />
+      <File FileName="Quanly/Models/DBConnect.cs" Line="27" Column="1" />
+      <File FileName="Quanly/Controllers/LoginController.cs" Line="92" Column="10" />
+      <File FileName="Quanly/Models/DTO/Khachhang.cs" Line="7" Column="28" />
+      <File FileName="Quanly/Views/Shared/_Layout.cshtml" Line="29" Column="92" />
+      <File FileName="Quanly/Views/Home/Index.cshtml" Line="6" Column="18" />
+      <File FileName="Quanly/Views/Home/Privacy.cshtml" Line="1" Column="1" />
+      <File FileName="Quanly/Views/Login/Register.cshtml" Line="32" Column="10" />
+      <File FileName="Quanly/Models/DTO/Login.cs" Line="1" Column="1" />
+      <File FileName="Quanly/Models/DTO/Nhanvien.cs" Line="20" Column="6" />
+      <File FileName="Quanly/Models/DALImpl/RegisterImpl.cs" Line="43" Column="13" />
+      <File FileName="Quanly/Models/DAL/IRegister.cs" Line="12" Column="36" />
+      <File FileName="Quanly/Views/Login/Login_user.cshtml" Line="53" Column="10" />
+      <File FileName="Quanly/Views/Login/Index.cshtml" Line="62" Column="6" />
+      <File FileName="Quanly/Views/Login/MyHome.cshtml" Line="8" Column="2" />
+      <File FileName="Quanly/Models/DAL/ILogin.cs" Line="10" Column="21" />
+      <File FileName="Quanly/Views/Shared/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
+      <File FileName="Quanly/Models/DAL/I.cs" Line="13" Column="32" />
+      <File FileName="Quanly/Models/DALImpl/HomeImpl.cs" Line="50" Column="1" />
+      <File FileName="Quanly/Models/DTO/Hanghoa.cs" Line="15" Column="39" />
+      <File FileName="Quanly/Program.cs" Line="16" Column="27" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Quanly" expanded="True">
+            <Node name="Quanly" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

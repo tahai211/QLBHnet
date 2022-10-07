@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "MyHome";<!--chuyen du lieu tam thoi k co modul tu controller sang view-->
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (ViewBag.user != null)
+{
+    <h2 style="color:red">@ViewBag.user</h2>
+}
