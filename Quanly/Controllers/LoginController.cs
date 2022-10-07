@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.AspNetCore.Http;
 
+
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Quanly.Controllers
@@ -67,11 +68,10 @@ namespace Quanly.Controllers
         }*/
         public IActionResult Login_user(string thongbao)
         {
-            ViewBag.thongbao = thongbao;
+            //ViewBag["thongbao"] = thongbao;
             return View();
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult Verify(Login login)
         {
             if (ModelState.IsValid)//kiem tra xem cac truong da day du chua
@@ -82,7 +82,8 @@ namespace Quanly.Controllers
                 if (tb > 0)
                 {
                     HttpContext.Session.SetString("Name", login.UserName.ToString());
-                    return RedirectToAction("~/Views/Home/Index.cshtml");
+                    
+                    return RedirectToAction("MyHome");
 
 
                 }
@@ -144,6 +145,21 @@ namespace Quanly.Controllers
                 return RedirectToAction("Login_user", new { thongbao = "Điền thông tin đăng ký thành công !" });
             }
             return RedirectToAction("Update-Account", new { thongbao = "Điền đầy đủ thông tin !" });
+        }
+
+
+        public IActionResult MyHome()
+        {
+            HomeImpl hm = new HomeImpl();//khoi tao
+            List<Hanghoa> obj = hm.listHang().OrderBy(x => x.Soluong).ToList(); ;
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Name")))
+            {
+                return View(obj);
+            }
+            ViewBag.user = HttpContext.Session.GetString("Name");
+           
+            return View(obj);
+
         }
 
 

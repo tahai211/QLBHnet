@@ -18,17 +18,8 @@ namespace Quanly.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index(string user)
+        public IActionResult Index()
         {
-            HomeImpl hm = new HomeImpl();//khoi tao
-            List<Hanghoa> obj = hm.listHang().OrderBy(x => x.Soluong).ToList(); ;
-            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Name")))
-            {
-                ViewBag.user = HttpContext.Session.GetString("Name");
-                ViewBag.Title = "";
-                
-                return View(obj);
-            }
            
             return View();
             

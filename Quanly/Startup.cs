@@ -31,12 +31,6 @@ namespace Quanly
                 options.IdleTimeout = TimeSpan.FromSeconds(10);
                 options.Cookie.IsEssential = true;
             });
-
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,7 +60,7 @@ namespace Quanly
                 //endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Login}/{action=MyHome}/{id?}");
             });
            
         }

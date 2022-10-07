@@ -1,14 +1,13 @@
-﻿@page
-@model IEnumerable<Quanly.Models.DTO.Hanghoa>
+﻿@model IEnumerable<Quanly.Models.DTO.Hanghoa>
 @using Microsoft.AspNetCore.Http
-@*@inject IHttpContextAccessor HttpContextAccessor*@
+
 @{
     ViewBag.Title = "Home Page";
 }
 <h2>Danh Sach Mat Hang</h2>
 @if (string.IsNullOrEmpty( ViewBag.user))
     {
-    <p style="color:red">@ViewBag.use</p>
+    
 
     <table class="table">
         <tr>
@@ -47,10 +46,54 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Conlai)
                 </td>
+            </tr>
+            }
 
 
+
+    </table>
+    }
+    else{
+         <p style="color:red">@ViewBag.use</p>
+         <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaMH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenMH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Xuatxu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Giaban)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Conlai)
+            </th>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
                 <td>
-                    <!--nut sua xoa 1 sinh vien khi bam vao nut se gui yeu cau den controller va hien thi view sua va xoa-->
+                    @Html.DisplayFor(modelItem => item.MaMH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenMH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Xuatxu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Giaban)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Conlai)
+                </td>
+                <td>
+                   
                     @Html.ActionLink("Edit", "Mua")
 
                 </td>
@@ -60,10 +103,7 @@
 
 
     </table>
-    }
-    else{
-
-    <p>Ban can dan nhap</p>
+    
     }
 
 

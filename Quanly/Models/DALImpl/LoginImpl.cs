@@ -20,15 +20,22 @@ namespace Quanly.Models.DALImpl
         }
         public int loginAcc(Login login)
         {
+            var tb = 0;
             SqlConnection con = db.getConnection();
             SqlCommand cmd = new SqlCommand("Login_Account", con);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@UserName", login.UserName);
 
             cmd.Parameters.AddWithValue("@PassWord", login.Password);
-
-            int tb = (int)Convert.ToUInt32(cmd.ExecuteScalar());
-
+            var result = cmd.ExecuteScalar();
+            try
+            {
+                tb = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch
+            {
+                tb = 0;
+            }
             cmd.Dispose();
             con.Close();
             return tb;

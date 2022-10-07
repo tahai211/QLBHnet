@@ -1,8 +1,114 @@
-﻿@{
+﻿@model IEnumerable<Quanly.Models.DTO.Hanghoa>
+@using Microsoft.AspNetCore.Http
+@{
     ViewBag.Title = "MyHome";<!--chuyen du lieu tam thoi k co modul tu controller sang view-->
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@if (ViewBag.user != null)
-{
-    <h2 style="color:red">@ViewBag.user</h2>
-}
+
+
+<h2>Danh Sach Mat Hang</h2>
+@if (string.IsNullOrEmpty( ViewBag.user))
+    {
+    
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaMH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenMH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Xuatxu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Giaban)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Conlai)
+            </th>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaMH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenMH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Xuatxu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Giaban)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Conlai)
+                </td>
+            </tr>
+            }
+
+
+
+    </table>
+    }
+    else{
+         
+         <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaMH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenMH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Xuatxu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Giaban)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Conlai)
+            </th>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaMH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenMH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Xuatxu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Giaban)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Conlai)
+                </td>
+                <td>
+                   
+                    @Html.ActionLink("Edit", "Mua")
+
+                </td>
+            </tr>
+            }
+           
+        
+           <p style="color:red">@ViewBag.user</p>
+        
+            
+
+    </table>
+    
+    }
+
+
